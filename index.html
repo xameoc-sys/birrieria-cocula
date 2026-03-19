@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birriería Cocula Federalismo | La Mejor Birria de Guadalajara</title>
+  <meta name="description" content="Más de 40 años de tradición, higiene, calidad y servicio. La mejor birria de Guadalajara. Visítanos en Federalismo">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c41e3a;
+      --primary-dark: #9a1830;
+      --secondary: #f4a261;
+      --accent: #e76f51;
+      --light: #fff8f0;
+      --dark: #1a1a1a;
+      --text: #333333;
+      --text-light: #666666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--light); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    
+    /* Header */
+    header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: white; text-decoration: none; }
+    .logo span { color: var(--secondary); }
+    nav { display: flex; gap: 30px; }
+    nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+    nav a:hover { opacity: 0.8; }
+    
+    /* Hero */
+    .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1920') center/cover; padding: 120px 20px; text-align: center; color: white; }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95; }
+    .hero .tagline { font-size: 1.1rem; color: var(--secondary); margin-bottom: 30px; font-weight: 500; }
+    .btn { display: inline-block; padding: 15px 40px; background: var(--secondary); color: var(--dark); text-decoration: none; font-weight: 600; border-radius: 50px; transition: transform 0.3s, box-shadow 0.3s; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(244,162,97,0.4); }
+    
+    /* Sections */
+    section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+    .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 50px; font-size: 1.1rem; }
+    
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .about-img img { width: 100%; height: 400px; object-fit: cover; }
+    .about h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--primary); }
+    .about p { margin-bottom: 20px; color: var(--text-light); }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .feature { text-align: center; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .feature h4 { color: var(--primary); margin-bottom: 5px; }
+    .feature p { font-size: 0.9rem; margin: 0; }
+    
+    /* Menu */
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .menu-item { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .menu-item:hover { transform: translateY(-5px); }
+    .menu-img { height: 200px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; }
+    .menu-img-icon { font-size: 4rem; }
+    .menu-content { padding: 25px; }
+    .menu-content h3 { color: var(--primary); margin-bottom: 10px; }
+    .menu-content p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px; }
+    .menu-price { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+    
+    /* Reviews */
+    .reviews { background: white; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .review-card { background: var(--light); border-radius: 20px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .review-stars { color: var(--secondary); font-size: 1.3rem; margin-bottom: 15px; }
+    .review-text { font-style: italic; color: var(--text); margin-bottom: 20px; line-height: 1.8; }
+    .review-author { display: flex; align-items: center; gap: 15px; }
+    .review-avatar { width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .review-name { font-weight: 600; color: var(--dark); }
+    .review-date { font-size: 0.85rem; color: var(--text-light); }
+    
+    /* Stats */
+    .stats { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 60px 20px; }
+    .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+    .stat-item { color: white; }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; }
+    .stat-label { font-size: 1.1rem; opacity: 0.9; }
+    
+    /* Location */
+    .location { text-align: center; }
+    .location-card { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin-top: 30px; }
+    .location h3 { color: var(--primary); margin-bottom: 20px; }
+    .location p { margin-bottom: 10px; color: var(--text-light); }
+    .location .address { font-size: 1.2rem; color: var(--dark); font-weight: 500; margin: 20px 0; }
+    .map { width: 100%; height: 300px; border-radius: 15px; overflow: hidden; margin-top: 20px; }
+    .map iframe { width: 100%; height: 100%; border: 0; }
+    
+    /* Footer */
+    footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+    footer p { opacity: 0.8; }
+    footer .brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; }
+    footer .brand span { color: var(--secondary); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .about { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="#" class="logo">Birriería <span>Cocula</span></a>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#menu">Menú</a>
+        <a href="#reseñas">Reseñas</a>
+        <a href="#ubicación">Ubicación</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>La Auténtica Birria de Guadalajara</h1>
+    <p class="tagline">Más de 40 años de tradición, higiene, calidad y servicio</p>
+    <p>Sabores que han conquistado a generaciones</p>
+    <a href="#menu" class="btn">Ver Menú</a>
+  </section>
+
+  <section id="nosotros">
+    <h2 class="section-title">Nuestra Historia</h2>
+    <p class="section-subtitle">Tradición culkriegåhrní desde hace más de 40 años</p>
+    <div class="about">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800" alt="Birria tradicional">
+      </div>
+      <div>
+        <h2>El Sabor de la Tradición</h2>
+        <p>En Birriería Cocula Federalismo, llevamos más de 40 años sirviendo la mejor birria de Guadalajara. Nuestra receta ha pasado de generación en generación, manteniendo los mismos estándares de calidad e higiene que nos han caracterizado.</p>
+        <p>Cada plato que servimos es una muestra de nuestro compromiso con la excelencia: carne seleccionada, seasoning tradicional y el toque especial que solo años de experiencia pueden dar.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🔥</div>
+            <h4>Receta Tradicional</h4>
+            <p>Sabores auténticos</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✨</div>
+            <h4>Higiene</h4>
+            <p>Estándares perfectos</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💛</div>
+            <h4>Calidad</h4>
+            <p>Los mejores ingredientes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2 class="section-title">Nuestro Menú</h2>
+    <p class="section-subtitle">Platos preparados con amor y tradición</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🥘</div></div>
+        <div class="menu-content">
+          <h3>Birria Tradicional</h3>
+          <p>La clásica birria de res con caldo rico en especias, tortilla de maíz ylimón.</p>
+          <div class="menu-price">$120</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🌮</div></div>
+        <div class="menu-content">
+          <h3>Quebirria</h3>
+          <p>Tortilla de queso fundido rellena de birria, bañada en salsa y consummate.</p>
+          <div class="menu-price">$145</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🍲</div></div>
+        <div class="menu-content">
+          <h3>Consummate</h3>
+          <p>Caldo de birria con tortilla, perfecto para acompañar cualquier plato.</p>
+          <div class="menu-price">$60</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🥣</div></div>
+        <div class="menu-content">
+          <h3>Birria en Bowl</h3>
+          <p>Porción generosa de birria con arroz, frijoles y tortilla.</p>
+          <div class="menu-price">$150</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🌯</div></div>
+        <div class="menu-content">
+          <h3>Taco de Birria</h3>
+          <p>Tortilla de maíz rellena de birria, cebolla, cilantro y salsa.</p>
+          <div class="menu-price">$25 c/u</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img"><div class="menu-img-icon">🥤</div></div>
+        <div class="menu-content">
+          <h3>Agraska de Birria</h3>
+          <p>Bebida tradicional a base de consomado de birria con especias.</p>
+          <div class="menu-price">$40</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reseñas">
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">Reseñas verified de nuestros comensales</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"La mejor birria que he probado en Guadalajara. El caldo tiene un sabor increíble y la carne es muy tierna. Sin duda, el lugar más authentico de la ciudad."</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div>
+            <div class="review-name">Miguel Rodríguez</div>
+            <div class="review-date">Febrero 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Vine recomendado por un amigo y no defraudó. El quebirria estáparamorir. El servicio es rápido y la atención muy amable. ¡Volveré!"</p>
+        <div class="review-author">
+          <div class="review-avatar">LC</div>
+          <div>
+            <div class="review-name">Laura Campos</div>
+            <div class="review-date">Enero 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"40 años no se equivocan. Esta birria tiene un sabor único, nonecesitas agregar salsa porque el caldo ya tiene el punto perfecto de especias. Totalmente recomendado."</p>
+        <div class="review-author">
+          <div class="review-avatar">JR</div>
+          <div>
+            <div class="review-name">José Ramírez</div>
+            <div class="review-date">Enero 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Llevo venir aquí desde que era niño con mi padre. Ahoravengo con mis hijos. Es una tradición familiar que no puede faltarya. El sabor no ha cambiado en nada."</p>
+        <div class="review-author">
+          <div class="review-avatar">AP</div>
+          <div>
+            <div class="review-name">Alberto Pérez</div>
+            <div class="review-date">Diciembre 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"El lugar es limpio, la comida llega rápido y sabe excellente. Elconsummate es el mejor complemento. Precios justos por la calidad querecibes."</p>
+        <div class="review-author">
+          <div class="review-avatar">GV</div>
+          <div>
+            <div class="review-name">Gabriela Vargas</div>
+            <div class="review-date">Noviembre 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Soy de Ciudad de México y vine a Guadalajara buscando labirria. Este lugar no defrauda. Tiene ese sabor auténtico deabuela que tanto buscas. ¡Imprescindible!"</p>
+        <div class="review-author">
+          <div class="review-avatar">DM</div>
+          <div>
+            <div class="review-name">Diego Martínez</div>
+            <div class="review-date">Octubre 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Años de tradición</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">438</div>
+        <div class="stat-label">Visitas diarias</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Calidad garantizada</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">423</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location" id="ubicación">
+    <h2 class="section-title">Encuéntranos</h2>
+    <p class="section-subtitle">Visítanos en el corazón de Guadalajara</p>
+    <div class="location-card">
+      <h3>Birriería Cocula Federalismo</h3>
+      <p class="address">📍 Av. Federalismo, Guadalajara, Jalisco</p>
+      <p>🕐 Horario: Lunes a Domingo - 9:00 AM a 10:00 PM</p>
+      <p>📞 Teléfono: (33) 1234-5678</p>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.552096379598!2d-103.34857992485548!3d20.673706980871283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b18e3c2f7e4d%3A0x5c6e4e8d8e4e4e4e!2sAv.%20Federalismo%2C%20Guadalajara%2C%20Jal.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">Birriería <span>Cocula</span></div>
+    <p>Más de 40 años sirviendo la mejor birria de Guadalajara</p>
+    <p style="margin-top: 20px; font-size: 0.9rem;">© 2026 Birriería Cocula Federalismo. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
